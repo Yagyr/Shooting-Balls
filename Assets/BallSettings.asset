@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564de448ea97bce4db224e8b2ecac48d, type: 3}
+  m_Name: BallSettings
+  m_EditorClassIdentifier: 
+  ballMaterials:
+  - {fileID: 2100000, guid: 237181b7254eabe4abaf6608c0ca9055, type: 2}
+  - {fileID: 2100000, guid: ab0a49822129a9842879bb86d95c98ad, type: 2}
+  - {fileID: 2100000, guid: 3a9f43b53ad3f544cba60982e2d8f9a9, type: 2}
+  - {fileID: 2100000, guid: 1204e64fe26bfea4fbe10ac9628a3927, type: 2}
+  - {fileID: 2100000, guid: fa24741ccf6046a4fb6c87fcaa21ea78, type: 2}
+  - {fileID: 2100000, guid: 16deb452b657f7948af467bb4ad74591, type: 2}
+  - {fileID: 2100000, guid: a4adb0736888fcc4b9c49ad236073baf, type: 2}
+  - {fileID: 2100000, guid: dc9e001691e91db448d4592b1325a59b, type: 2}
+  - {fileID: 2100000, guid: ab842b82fee436f4b81b82c4df4e476f, type: 2}
+  - {fileID: 2100000, guid: 26fc464db8691b141b02b7ba3ad85b0a, type: 2}
+  - {fileID: 2100000, guid: d6c518fffe289a241922b4f4d924d233, type: 2}
+  ballProjectionMaterials:
+  - {fileID: 2100000, guid: cc88bec1fa8a3ec4aa4e630513663a7c, type: 2}
+  - {fileID: 2100000, guid: 31ed09508b50cf446a4b5009e28740a0, type: 2}
+  - {fileID: 2100000, guid: 7735a7e11c4ce7b4fb0cd60045f50803, type: 2}
+  - {fileID: 2100000, guid: 75878f15224a72940bdc9c2e64683738, type: 2}
+  - {fileID: 2100000, guid: c6a9126d4ed43654d86f3a06c5067820, type: 2}
+  - {fileID: 2100000, guid: 8439e73d73714bb439936fb0b7561d43, type: 2}
+  - {fileID: 2100000, guid: 93456141d89698e45a71513b1693c97b, type: 2}
+  - {fileID: 2100000, guid: 0a268f9dc095d2947aa6a87fb2194b20, type: 2}
+  - {fileID: 2100000, guid: ce5768caabe07224bb7552d009ee3708, type: 2}
+  - {fileID: 2100000, guid: 8840db1d9bf8de549b6bc61b97a3be80, type: 2}
+  - {fileID: 2100000, guid: 2ba8899ce181a944ab5382c38f2a43cc, type: 2}
