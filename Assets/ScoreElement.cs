@@ -7,40 +7,41 @@ using UnityEngine.UI;
 public class ScoreElement : MonoBehaviour
 {
     public ItemType itemType;
-    [SerializeField] private int _currentScore;
-    [SerializeField] private TextMeshProUGUI _text;
-    [SerializeField] private Transform _iconTransform;
-    [SerializeField] private AnimationCurve _animationCurve;
-    [SerializeField] private int _level;
+    public int currentScore;
+    public Transform iconTransform;
+    public int level = 0;
     public GameObject flyingIconPrefab;
 
+    [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private AnimationCurve _animationCurve;
+    
     public void AddOne()
     {
-        _currentScore--;
-        if (_currentScore < 0)
+        currentScore--;
+        if (currentScore < 0)
         {
-            _currentScore = 0;
+            currentScore = 0;
         }
 
-        _text.text = _currentScore.ToString();
+        _text.text = currentScore.ToString();
         StartCoroutine(AddAnimation());
         //TODO: Проверить победу
     }
 
-    public void Setup(int number)
+    public virtual void Setup(Task task)
     {
-        _currentScore = number;
-        _text.text = _currentScore.ToString();
+        currentScore = task.number;
+        _text.text = currentScore.ToString();
     }
 
     private IEnumerator AddAnimation()
     {
-        for (float t = 0; t < 1; t += Time.deltaTime * 1.8f)
+        for (float t = 0; t < 1f; t += Time.deltaTime)
         {
             float scale = _animationCurve.Evaluate(t);
-            _iconTransform.localScale = Vector3.one * scale;
+            iconTransform.localScale = Vector3.one * scale;
             yield return null;
         }
-        _iconTransform.localScale = Vector3.one;
+        iconTransform.localScale = Vector3.one;
     }
 }

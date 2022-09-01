@@ -3,32 +3,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct Task
+public class Progress : MonoBehaviour
 {
-    public ItemType itemType;
-    public int number;
+    public int coins;
     public int level;
-}
 
-public class Level : MonoBehaviour
-{
-    public int numberOfBalls = 50;
-    public int maxCreatedBallLevel = 1;
-    public Task[] tasks;
-
-    public static Level Instance;
+    public static Progress Instance;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
     }
-}
 
+    public void SetLevel(int level)
+    {
+        this.level = level;
+    }
+
+    public void AddCoins(int value)
+    {
+        coins += value;
+    }
+}

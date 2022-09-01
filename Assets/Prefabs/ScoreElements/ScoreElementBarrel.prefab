@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 2
-  _currentScore: 5
+  currentScore: 0
   _text: {fileID: 2672241649963309180}
-  _iconTransform: {fileID: 2672241649449441583}
+  iconTransform: {fileID: 2672241649449441583}
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -67,8 +67,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.045946598
     - serializedVersion: 3
-      time: 0.22912328
-      value: 1.9670519
+      time: 0.20586888
+      value: 1.6515079
       inSlope: 0.71962166
       outSlope: 0.71962166
       tangentMode: 0
@@ -76,8 +76,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.4160575
-      value: 0.6201663
+      time: 0.41880408
+      value: 0.5701175
       inSlope: -1.7987293
       outSlope: -1.7987293
       tangentMode: 0
@@ -85,8 +85,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.7155256
-      value: 1.4824299
+      time: 0.64087963
+      value: 1.1656117
       inSlope: -0.578653
       outSlope: -0.578653
       tangentMode: 0
@@ -94,8 +94,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.75686157
     - serializedVersion: 3
-      time: 0.89948344
-      value: 0.7718714
+      time: 0.87189555
+      value: 0.9134119
       inSlope: 1.1055032
       outSlope: 1.1055032
       tangentMode: 0
@@ -105,8 +105,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2.2695625
-      outSlope: 2.2695625
+      inSlope: 0.67591786
+      outSlope: 0.67591786
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -114,8 +114,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _level: 0
-  flyingIconPrefab: {fileID: 0}
+  level: 0
+  flyingIconPrefab: {fileID: 3526217760909839485, guid: ed3c3ab8c5e7bf74093c1bc863dd332a, type: 3}
 --- !u!1 &2672241649449441582
 GameObject:
   m_ObjectHideFlags: 0

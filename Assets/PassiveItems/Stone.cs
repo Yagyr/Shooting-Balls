@@ -22,6 +22,10 @@ public class Stone : PassiveItem
                 CreateChildRock(_level - 1);
             }
         }
+        else
+        {
+            ScoreManager.Instance.AddScore(itemType, transform.position);
+        }
 
         Die();
     }
