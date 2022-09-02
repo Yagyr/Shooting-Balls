@@ -119,9 +119,10 @@ MonoBehaviour:
   _trigger: {fileID: 64261498901218620}
   _animator: {fileID: 6819668678980961899}
   _affectRadius: 2.5
-  _forceValue: 500
+  _forceValue: 250
   _affectArea: {fileID: 4040602915434838172}
   _effectPrefab: {fileID: 2398608829508964987, guid: f387ac791007951459ed6a93dfa675bf, type: 3}
+  _material: {fileID: 2100000, guid: 5b964c85a07b14c4da4322aa315c45e7, type: 2}
 --- !u!1 &64261498901218626
 GameObject:
   m_ObjectHideFlags: 0

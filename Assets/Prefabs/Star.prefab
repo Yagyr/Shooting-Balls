@@ -278,6 +278,10 @@ MonoBehaviour:
   _affectRadius: 2.5
   _affectArea: {fileID: 1366751730833635684}
   _effectPrefab: {fileID: 8550051998276758377, guid: 6f14ea3b4707b0f43a7d2a7dd397992e, type: 3}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  _material: {fileID: 2100000, guid: 0c69db0ac1995af4db117af4dbf74f5d, type: 2}
 --- !u!1 &3026694904848409543
 GameObject:
   m_ObjectHideFlags: 0
