@@ -31,6 +31,7 @@ public class ScoreElement : MonoBehaviour
         _text.text = currentScore.ToString();
     }
 
+    // TODO: Почитай что такое DOTween, постарайся сделать на нем. Анимацию полета тоже можно на нем сделать.
     private IEnumerator AddAnimation()
     {
         for (float t = 0; t < 1f; t += Time.deltaTime)

@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _loseObject;
 
     public static GameManager Instance;
+    
+    // TODO: UnityEvent лучше не использовать в этом контексте - лучше уж референснуть Spawner и Creator и выключить их через код.
+    // А так сложнее читать код, становится непонятно, что там за логика происходит на onWin, пока не заглянешь в редактор.
     public UnityEvent onWin;
 
     private void Awake()
@@ -28,6 +31,8 @@ public class GameManager : MonoBehaviour
         onWin.Invoke();
         int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         Progress.Instance.SetLevel(currentLevelIndex + 1);
+        
+        // TODO: Было бы круто где-то отображать то что я получил +50
         Progress.Instance.AddCoins(50);
     }
 

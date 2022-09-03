@@ -3,9 +3,10 @@ using UnityEngine.UI;
 
 public class ActiveItem : Item
 {
+    // TODO: Хорошо бы инкапсулировать эти переменные в проперти.
     public int level;
     public float radius;
-    public Rigidbody rigidbody;
+    public Rigidbody rigidbody; // TODO: Rider скорее всего подчеркнул тебе - rigidbody уже объявлено в пэрент классе Component. Старайся в таком контексте не использовать это имя. 
     public bool isDead;
     public Projection projection;
 
@@ -35,7 +36,7 @@ public class ActiveItem : Item
         _levelText.text = number.ToString();
 
         
-        //Исправляю баг с взаимодействием тригеров шаров
+        //Исправляю баг с взаимодействием тригеров шаров TODO: что за баг?
         _trigger.enabled = false;
         Invoke(nameof(EnableTrigger), 0.08f);
     }

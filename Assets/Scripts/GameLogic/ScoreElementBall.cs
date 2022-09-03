@@ -12,6 +12,7 @@ public class ScoreElementBall : ScoreElement
     {
         base.Setup(task);
 
+        // TODO: Эту логику с вычислением значения я уже видел в ActiveItem. Копипаста, получается. Надо вынести.
         int number = (int)Mathf.Pow(2, task.level + 1);
         _levelText.text = number.ToString();
         _ballImage.color = _ballSettings.ballMaterials[task.level].color;

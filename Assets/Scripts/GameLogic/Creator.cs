@@ -128,6 +128,9 @@ public class Creator : MonoBehaviour
         }
     }
 
+    // TODO: Наверное, не самый надежный способ проверки.
+    // Я бы пробегался по всем rigidbody (или айтемам) в сцене, и смотрел на их velocity.magnitude.
+    // Если он почти нулевой в течении n времени - проигрыш
     private IEnumerator WaitForLose()
     {
         for (float t = 0f; t < 5f; t += Time.deltaTime)

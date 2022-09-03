@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class Progress : MonoBehaviour
 {
+    // TODO: Здесь можно было бы хранить сразу класс ProgressData
     public int coins;
     public int level;
-
+    
     public static Progress Instance;
 
     private void Awake()

@@ -94,14 +94,12 @@ public class CollapseManager : MonoBehaviour
     public void ExplodeBall(Vector3 position, float radius)
     {
         Collider[] colliders = Physics.OverlapSphere(position, radius);
-        for (int i = 0; i < colliders.Length; i++)
+        foreach (var collider in colliders)
         {
-            if (colliders[i].attachedRigidbody)
+            if (collider.attachedRigidbody &&
+                collider.attachedRigidbody.TryGetComponent(out PassiveItem passiveItemRb))
             {
-                if (colliders[i].attachedRigidbody.TryGetComponent(out PassiveItem passiveItemRb))
-                {
-                    passiveItemRb.OnAffect();
-                }
+                passiveItemRb.OnAffect();
             }
         }
     }

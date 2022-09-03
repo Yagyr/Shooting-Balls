@@ -11,6 +11,7 @@ public class Ball : ActiveItem
         base.SetLevel(level);
         _renderer.material = _ballSettings.ballMaterials[level];
         
+        // TODO: Можно было эти значения задать где-нибудь в BallSettings, но в целом ок если настраивается один раз.
         radius = Mathf.Lerp(0.4f, 0.7f, level / 10f);
         Vector3 ballScale = Vector3.one * radius * 2;
         _visualTransform.localScale = ballScale;

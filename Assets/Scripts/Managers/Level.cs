@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
+// TODO: Переназови класс и старайся не использовать такие же имена как в системных библиотеках (уже есть класс с названием Task)
 public struct Task
 {
     public ItemType itemType;

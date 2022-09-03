@@ -1,28 +1,19 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : MonoSingleton<ScoreManager>
 {
+    // TODO: Если переменные не нужны снаружи кроме как в движке - делай их [SerializeField] private
     public Level level;
     public ScoreElement[] scoreElementPrefabs;
     public ScoreElement[] scoreElements;
     public Transform itemScoreParent;
     [SerializeField] private Camera _camera;
 
-    public static ScoreManager Instance;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
+    // TODO: Унес отсюда логику синглтона в MonoSingleton.cs
+    // TODO: В других местах сделай тоже самое
+    
     private void Start()
     {
         scoreElements = new ScoreElement[level.tasks.Length];
@@ -33,11 +24,11 @@ public class ScoreManager : MonoBehaviour
             Task task = level.tasks[taskIndex];
             
             ItemType itemType = task.itemType;
-            for (int i = 0; i < scoreElementPrefabs.Length; i++)
+            foreach (var scoreElement in scoreElementPrefabs)
             {
-                if (itemType == scoreElementPrefabs[i].itemType)
+                if (itemType == scoreElement.itemType)
                 {
-                    ScoreElement newScoreElement = Instantiate(scoreElementPrefabs[i], itemScoreParent);
+                    ScoreElement newScoreElement = Instantiate(scoreElement, itemScoreParent);
                     newScoreElement.Setup(task);
 
                     scoreElements[taskIndex] = newScoreElement;
@@ -48,20 +39,17 @@ public class ScoreManager : MonoBehaviour
 
     public bool AddScore(ItemType itemType, Vector3 position, int level = 0)
     {
-        for (int i = 0; i < scoreElements.Length; i++)
+        foreach (var scoreElement in scoreElements)
         {
-            if (scoreElements[i].itemType == itemType)
+            if (scoreElement.itemType == itemType &&
+                scoreElement.currentScore != 0 &&
+                scoreElement.level == level)
             {
-                if (scoreElements[i].currentScore != 0)
-                {
-                    if (scoreElements[i].level == level)
-                    {
-                        StartCoroutine(AddScoreAnimation(scoreElements[i], position));
-                        return true;
-                    }
-                }
+                StartCoroutine(AddScoreAnimation(scoreElement, position));
+                return true;
             }
         }
+
         return false;
     }
 
@@ -79,6 +67,7 @@ public class ScoreManager : MonoBehaviour
 
         for (float t = 0f; t < 1f; t += Time.deltaTime)
         {
+            // TODO: Dotween бы зарешал эту тему. Но ты жесткий конечно.
             icon.transform.position = Bezier.GetPoint(a, b, c, d, t);
             yield return null;
         }
