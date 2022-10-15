@@ -3,7 +3,6 @@
 ## Supporting documentation
 At the moment the game has:
 * Using Scriptable Object
-* Using Singleton
 * Using the basic principles of OOP
 * Save System
 * System for setting tasks per level
